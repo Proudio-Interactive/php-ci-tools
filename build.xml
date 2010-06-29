@@ -1,0 +1,81 @@
+<project name="php-tools" default="setup" basedir=".">
+  <target name="clean">
+    <!-- Clean up -->
+    <delete dir="${basedir}/pear"/>
+    <!-- Create build directories -->
+    <mkdir dir="${basedir}/pear"/>
+  </target>
+  <!-- Create the basic pear setup -->
+  <target name="pear-base">
+    <exec executable="pear" failonerror="true">
+      <arg line="config-create ${basedir}/pear pear/.pearrc"/>
+    </exec>
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc install PEAR"/>
+    </exec>
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-update pear.php.net"/>
+    </exec>
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-discover pear.phpmd.org"/>
+    </exec>
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-discover pear.pdepend.org"/>
+    </exec>
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-discover pear.phpunit.de"/>
+    </exec>
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-discover components.ez.no"/>
+    </exec>
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-discover pear.symfony-project.com"/>
+    </exec>
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-discover pear.horde.org"/>
+    </exec>
+  </target>
+  <!-- Install PHP_Depend -->
+  <target name="pdepend">
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc install pdepend/PHP_Depend-beta"/>
+    </exec>
+  </target>
+  <!-- Install PHP_PMD -->
+  <target name="pmd">
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --alldeps phpmd/PHP_PMD-alpha"/>
+    </exec>
+  </target>
+  <!-- Install phpcpd -->
+  <target name="phpcpd">
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc install phpunit/phpcpd"/>
+    </exec>
+  </target>
+  <!-- Install PHPDocumentor -->
+  <target name="phpdoc">
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc install PHPDocumentor"/>
+    </exec>
+  </target>
+  <!-- Install PHP_CodeSniffer -->
+  <target name="phpcs">
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc install PHP_CodeSniffer"/>
+    </exec>
+  </target>
+  <!-- Install PHP_CodeBrowser -->
+  <target name="phpcb">
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --alldeps phpunit/PHP_CodeBrowser-alpha"/>
+    </exec>
+  </target>
+  <!-- Install PHPUnit -->
+  <target name="phpunit">
+    <exec executable="pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --alldeps phpunit/PHPUnit"/>
+    </exec>
+  </target>
+  <target name="setup" depends="clean,pear-base,pdepend,pmd,phpcpd,phpdoc,phpcs,phpcb,phpunit"/>
+</project>
