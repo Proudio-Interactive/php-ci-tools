@@ -6,76 +6,121 @@
     <mkdir dir="${basedir}/pear"/>
   </target>
   <!-- Create the basic pear setup -->
-  <target name="pear-base">
+  <target name="pear">
     <exec executable="pear" failonerror="true">
       <arg line="config-create ${basedir}/pear pear/.pearrc"/>
     </exec>
     <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc install PEAR"/>
+      <arg line="-c pear/.pearrc channel-update sources/pear.php.net.channel.xml"/>
     </exec>
     <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc channel-update pear.php.net"/>
+      <arg line="-c pear/.pearrc install --offline sources/Archive_Tar-1.3.7.tgz"/>
     </exec>
     <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc channel-discover pear.phpmd.org"/>
+      <arg line="-c pear/.pearrc install --offline sources/XML_Util-1.2.1.tgz"/>
     </exec>
     <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc channel-discover pear.pdepend.org"/>
+      <arg line="-c pear/.pearrc install --offline sources/Console_Getopt-1.2.3.tgz"/>
     </exec>
     <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc channel-discover pear.phpunit.de"/>
+      <arg line="-c pear/.pearrc install --offline sources/Structures_Graph-1.0.3.tgz"/>
     </exec>
     <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc channel-discover components.ez.no"/>
-    </exec>
-    <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc channel-discover pear.symfony-project.com"/>
-    </exec>
-    <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc channel-discover pear.horde.org"/>
+      <arg line="-c pear/.pearrc install --offline sources/PEAR-1.9.1.tgz"/>
     </exec>
   </target>
   <!-- Install PHP_Depend -->
   <target name="pdepend">
-    <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc install pdepend/PHP_Depend-beta"/>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-add sources/pear.pdepend.org.channel.xml"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/PHP_Depend-0.9.17.tgz"/>
     </exec>
   </target>
   <!-- Install PHP_PMD -->
   <target name="pmd">
-    <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --alldeps phpmd/PHP_PMD-alpha"/>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-add sources/pear.phpmd.org.channel.xml"/>
     </exec>
-  </target>
-  <!-- Install phpcpd -->
-  <target name="phpcpd">
-    <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc install phpunit/phpcpd"/>
-    </exec>
-  </target>
-  <!-- Install PHPDocumentor -->
-  <target name="phpdoc">
-    <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc install PHPDocumentor"/>
-    </exec>
-  </target>
-  <!-- Install PHP_CodeSniffer -->
-  <target name="phpcs">
-    <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc install PHP_CodeSniffer"/>
-    </exec>
-  </target>
-  <!-- Install PHP_CodeBrowser -->
-  <target name="phpcb">
-    <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --alldeps phpunit/PHP_CodeBrowser-alpha"/>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/PHP_PMD-0.2.6.tgz"/>
     </exec>
   </target>
   <!-- Install PHPUnit -->
   <target name="phpunit">
-    <exec executable="pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --alldeps phpunit/PHPUnit"/>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-add sources/components.ez.no.channel.xml"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-add sources/pear.symfony-project.com.channel.xml"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-add sources/pear.phpunit.de.channel.xml"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/YAML-1.0.3.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/XML_Parser-1.3.2.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/XML_Beautifier-1.2.0.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Base-1.8.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/ConsoleTools-1.6.1.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/File_Iterator-1.2.2.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/PHP_Timer-1.0.0.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/PHP_TokenStream-1.0.0RC1.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Text_Template-1.0.0.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/PHP_CodeCoverage-1.0.0RC1.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/PHPUnit-3.5.0RC1.tgz sources/PHPUnit_MockObject-1.0.0RC1.tgz sources/PHPUnit_Selenium-1.0.0RC1.tgz sources/DbUnit-1.0.0RC1.tgz"/>
     </exec>
   </target>
-  <target name="setup" depends="clean,pear-base,pdepend,pmd,phpcpd,phpdoc,phpcs,phpcb,phpunit"/>
+  <!-- Install phpcpd -->
+  <target name="phpcpd">
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/phpcpd-1.3.1.tgz"/>
+    </exec>
+  </target>
+  <!-- Install PHPDocumentor -->
+  <target name="phpdoc">
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/PhpDocumentor-1.4.3.tgz"/>
+    </exec>
+  </target>
+  <!-- Install PHP_CodeSniffer -->
+  <target name="phpcs">
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/PHP_CodeSniffer-1.2.2.tgz"/>
+    </exec>
+  </target>
+  <!-- Install PHP_CodeBrowser -->
+  <target name="phpcb">
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Console_CommandLine-1.1.3.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Text_Highlighter-0.7.1.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/PHP_CodeBrowser-0.9.0.tgz"/>
+    </exec>
+  </target>
+  <target name="setup" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phpdoc,phpcs,phpcb"/>
 </project>
