@@ -146,9 +146,15 @@
       <arg line="-c pear/.pearrc install --offline sources/Test-0.1.0dev201008242123.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Element-0.0.1dev201008242122.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Element-0.0.1dev201008251023.tgz"/>
     </exec>
   </target>
+  <!-- Install the Horde code sniffer standard --> 
+  <target name="hordestandard">
+    <!-- Create Horde directory -->
+    <mkdir dir="${basedir}/pear/pear/php/PHP/CodeSniffer/Standards/Horde"/>
+    <copy file="${basedir}/sources/HordeCodingStandard.php" todir="${basedir}/pear/pear/php/PHP/CodeSniffer/Standards/Horde" />
+  </target>
   <target name="setup" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phpdoc,phpcs,phpcb"/>
-  <target name="horde" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phpdoc,phpcs,phpcb,element"/>
+  <target name="horde" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phpdoc,phpcs,phpcb,element,hordestandard"/>
 </project>
