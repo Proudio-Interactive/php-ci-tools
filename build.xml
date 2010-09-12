@@ -122,8 +122,8 @@
       <arg line="-c pear/.pearrc install --offline sources/PHP_CodeBrowser-0.9.0.tgz"/>
     </exec>
   </target>
-  <!-- Install Horde_Element -->
-  <target name="element">
+  <!-- Install the Components application -->
+  <target name="components">
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc channel-add sources/pear.horde.org.channel.xml"/>
     </exec>
@@ -143,10 +143,13 @@
       <arg line="-c pear/.pearrc install --offline sources/Autoloader-0.2.0dev201008242122.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Injector-0.1.0dev201009122342.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/Test-0.1.0dev201008242123.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Element-0.0.1dev201008251606.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Components-0.0.1dev201009130027.tgz"/>
     </exec>
   </target>
   <!-- Install the Horde code sniffer standard --> 
@@ -156,5 +159,5 @@
     <copy file="${basedir}/sources/HordeCodingStandard.php" todir="${basedir}/pear/pear/php/PHP/CodeSniffer/Standards/Horde" />
   </target>
   <target name="setup" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phpdoc,phpcs,phpcb"/>
-  <target name="horde" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phpdoc,phpcs,phpcb,element,hordestandard"/>
+  <target name="horde" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phpdoc,phpcs,phpcb,components,hordestandard"/>
 </project>
