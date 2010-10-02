@@ -125,6 +125,9 @@
   <!-- Install the Components application -->
   <target name="components">
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc channel-add sources/pear.horde.org.channel.xml"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/XML_Serializer-0.20.0.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
