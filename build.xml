@@ -125,9 +125,6 @@
   <!-- Install the Components application -->
   <target name="components">
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc channel-add sources/pear.horde.org.channel.xml"/>
-    </exec>
-    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/XML_Serializer-0.20.0.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
@@ -146,10 +143,19 @@
       <arg line="-c pear/.pearrc install --offline sources/Injector-0.1.0dev201009122342.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Stream_Wrapper-0.1.0dev201010030030.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Support-0.2.0dev201010030030.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Cli-0.2.0dev201010030004.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/Test-0.1.0dev201008242123.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Components-0.0.1dev201009130027.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Components-0.0.1dev201010022359.tgz"/>
     </exec>
   </target>
   <!-- Install the Horde code sniffer standard --> 
