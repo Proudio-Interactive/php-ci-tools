@@ -164,10 +164,7 @@
       <arg line="-c pear/.pearrc install --offline sources/Support-0.2.0dev201010030030.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Translation-0.1.0dev201010172353.tgz"/>
-    </exec>
-    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Cli-0.2.0dev201010172354.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Cli-0.2.0dev201010181444.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/Test-0.1.0dev201008242123.tgz"/>
