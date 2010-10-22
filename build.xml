@@ -170,7 +170,7 @@
       <arg line="-c pear/.pearrc install --offline sources/Test-0.1.0dev201008242123.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Components-0.0.1dev201010181707.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Components-0.0.1dev201010230005.tgz"/>
     </exec>
   </target>
   <!-- Install the Horde code sniffer standard --> 
