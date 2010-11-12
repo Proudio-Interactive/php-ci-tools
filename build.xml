@@ -140,13 +140,19 @@
       <arg line="-c pear/.pearrc install --offline sources/PEAR_PackageFileManager2-1.0.1.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Argv-0.1.0dev201008242123.tgz"/>
-    </exec>
-    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/Autoloader-0.2.0dev201008242122.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Exception-0.1.0dev201010172309.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Role-0.2.0dev201011101940.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Translation-0.1.0dev201011121759.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Argv-0.1.0dev201011121759.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Exception-0.1.0dev201011121759.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/Url-0.1.0dev201010172309.tgz"/>
@@ -170,7 +176,7 @@
       <arg line="-c pear/.pearrc install --offline sources/Test-0.1.0dev201008242123.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Components-0.0.1dev201010230052.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Components-0.0.1dev201011112145.tgz"/>
     </exec>
   </target>
   <!-- Install the Horde code sniffer standard --> 
