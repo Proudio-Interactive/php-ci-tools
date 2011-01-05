@@ -173,7 +173,7 @@
       <arg line="-c pear/.pearrc install --offline sources/Cli-0.2.0dev201010181444.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Test-0.1.0dev201012131525.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Test-0.1.0dev201101052235.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/Components-0.0.1dev201011151854.tgz"/>
