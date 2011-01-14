@@ -176,6 +176,9 @@
       <arg line="-c pear/.pearrc install --offline sources/Test-0.1.0dev201101052235.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Cli_Modular-0.0.1dev201101141621.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/Components-0.0.1dev201101141608.tgz"/>
     </exec>
   </target>
