@@ -35,7 +35,7 @@
       <arg line="-c pear/.pearrc channel-add sources/pear.pdepend.org.channel.xml"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/PHP_Depend-0.9.17.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/PHP_Depend-0.10.1.tgz"/>
     </exec>
   </target>
   <!-- Install PHP_PMD -->
@@ -44,7 +44,7 @@
       <arg line="-c pear/.pearrc channel-add sources/pear.phpmd.org.channel.xml"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/PHP_PMD-0.2.6.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/PHP_PMD-1.0.1.tgz"/>
     </exec>
   </target>
   <!-- Install PHPUnit -->
@@ -59,13 +59,19 @@
       <arg line="-c pear/.pearrc channel-add sources/pear.phpunit.de.channel.xml"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/YAML-1.0.3.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/YAML-1.0.4.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/XML_Parser-1.3.2.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/XML_Parser-1.3.4.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/XML_Beautifier-1.2.0.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/XML_Beautifier-1.2.2.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/Cache_Lite-1.7.8.tgz"/>
+    </exec>
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/XML_RPC2-1.0.6.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/Base-1.8.tgz"/>
@@ -80,22 +86,28 @@
       <arg line="-c pear/.pearrc install --offline sources/PHP_Timer-1.0.0.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/PHP_TokenStream-1.0.0.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/PHP_TokenStream-1.0.1.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Text_Template-1.0.0.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Text_Template-1.1.0.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/PHP_CodeCoverage-1.0.0.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/PHP_CodeCoverage-1.0.4.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/PHPUnit-3.5.1.tgz sources/PHPUnit_MockObject-1.0.0.tgz sources/PHPUnit_Selenium-1.0.0.tgz sources/DbUnit-1.0.0.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/PHPUnit-3.5.11.tgz sources/PHPUnit_MockObject-1.0.8.tgz sources/PHPUnit_Selenium-1.0.2.tgz sources/DbUnit-1.0.1.tgz"/>
     </exec>
   </target>
   <!-- Install phpcpd -->
   <target name="phpcpd">
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/phpcpd-1.3.2.tgz"/>
+    </exec>
+  </target>
+  <!-- Install phploc -->
+  <target name="phploc">
+    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
+      <arg line="-c pear/.pearrc install --offline sources/phploc-1.6.1.tgz"/>
     </exec>
   </target>
   <!-- Install PHPDocumentor -->
@@ -122,7 +134,7 @@
       <arg line="-c pear/.pearrc install --offline sources/Text_Highlighter-0.7.1.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/PHP_CodeBrowser-0.9.1.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/PHP_CodeBrowser-1.0.0.tgz"/>
     </exec>
   </target>
   <!-- Install the Components application -->
@@ -131,7 +143,7 @@
       <arg line="-c pear/.pearrc channel-add sources/pear.horde.org.channel.xml"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/XML_Serializer-0.20.0.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/XML_Serializer-0.20.2.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/PEAR_PackageFileManager_Plugins-1.0.1.tgz"/>
@@ -188,6 +200,6 @@
     <mkdir dir="${basedir}/pear/pear/php/PHP/CodeSniffer/Standards/Horde"/>
     <copy file="${basedir}/sources/HordeCodingStandard.php" todir="${basedir}/pear/pear/php/PHP/CodeSniffer/Standards/Horde" />
   </target>
-  <target name="setup" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phpdoc,phpcs,phpcb"/>
-  <target name="horde" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phpdoc,phpcs,phpcb,components,hordestandard"/>
+  <target name="setup" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phploc,phpdoc,phpcs,phpcb"/>
+  <target name="horde" depends="clean,pear,pdepend,pmd,phpunit,phpcpd,phploc,phpdoc,phpcs,phpcb,components,hordestandard"/>
 </project>
