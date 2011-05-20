@@ -185,7 +185,7 @@
       <arg line="-c pear/.pearrc install --offline sources/Cli-0.2.0dev201010181444.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Test-0.1.0dev201101052235.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Horde_Test-1.1.0dev201105201405.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/Cli_Modular-0.0.1dev201101141621.tgz"/>
