@@ -143,9 +143,6 @@
       <arg line="-c pear/.pearrc channel-add sources/pear.horde.org.channel.xml"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc channel-update horde"/>
-    </exec>
-    <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/XML_Serializer-0.20.2.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
@@ -161,10 +158,10 @@
       <arg line="-c pear/.pearrc install --offline sources/Horde_Role-1.0.0.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install horde/Horde_Exception"/>
+      <arg line="-c pear/.pearrc install --offline sources/Horde_Translation-1.0.1dev201105231501.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
-      <arg line="-c pear/.pearrc install --offline sources/Horde_Translation-1.0.0.tgz"/>
+      <arg line="-c pear/.pearrc install --offline sources/Horde_Exception-1.0.2dev201105231501.tgz"/>
     </exec>
     <exec executable="${basedir}/pear/pear/pear" failonerror="true">
       <arg line="-c pear/.pearrc install --offline sources/Horde_Argv-1.0.1.tgz"/>
